@@ -1,0 +1,7 @@
+# Third-party notices
+
+Original application code, styling, SVG icon, synthetic logs and runbooks were created for IncidentLens and are MIT licensed. No third-party source code, photos, fonts, or icon collections are vendored. The interface uses system fonts.
+
+Python dependencies are installed from their upstream packages; their licenses remain applicable and are distributed with those packages. The resolved versions are in `requirements.lock` and `requirements-dev.lock`. Major direct dependencies: FastAPI (MIT), Uvicorn (BSD-3-Clause), SQLAlchemy (MIT), Alembic (MIT), Psycopg 3 (LGPL-3.0 and bundled binary component notices), Pydantic Settings (MIT), pwdlib (MIT), Argon2 CFFI (MIT), HTTPX (BSD-3-Clause), python-multipart (Apache-2.0), Jinja2 (BSD-3-Clause), pytest (MIT), pytest-cov (MIT), Ruff (MIT), and Playwright (Apache-2.0). Inspect installed wheel metadata for exact license texts and bundled/transitive notices.
+
+The PostgreSQL container uses the PostgreSQL License and its base-image component licenses. The Python base image includes Python and operating-system components under their own licenses. Images are referenced, not redistributed in this source repository. Browser binaries installed for testing carry their respective upstream notices. GitHub Actions are referenced from upstream repositories and retain their licenses. IBM, watsonx, Granite, OpenAI, Docker, GitHub and other product names belong to their respective owners; their mention implies no endorsement.

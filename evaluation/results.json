@@ -1,0 +1,671 @@
+{
+  "generated_at": "2026-11-12T19:08:28.110742+00:00",
+  "conditions": {
+    "python": "3.12.14",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "postgres": "PostgreSQL 16.15",
+    "mode": "baseline",
+    "requests": "serial, warmed connection; timings include parse, two retrieval paths and analysis; exclude login, HTTP, browser and provider"
+  },
+  "cases": 40,
+  "valid_logs": 36,
+  "classification_accuracy": 0.8888888888888888,
+  "input_rejection": {
+    "passed": 4,
+    "total": 4
+  },
+  "retrieval_recall_at_3_oracle_category": 1.0,
+  "end_to_end_retrieval_hit_rate": 0.875,
+  "citations": {
+    "valid": 22,
+    "total": 22
+  },
+  "log_reference_validity": true,
+  "evidence_support_author_rubric": {
+    "supported": 21,
+    "emitted_reports": 22
+  },
+  "unknown_abstention": {
+    "abstained": 11,
+    "total": 12
+  },
+  "known_abstention": {
+    "abstained": 3,
+    "total": 24
+  },
+  "latency_ms": {
+    "median": 4.591,
+    "p95_nearest_rank": 9.003,
+    "max": 12.625
+  },
+  "failures": [
+    "DB08",
+    "AU08",
+    "SV08",
+    "UN10"
+  ],
+  "results": [
+    {
+      "id": "DB01",
+      "expected": "database",
+      "actual": "database",
+      "correct": true,
+      "status": "supported",
+      "retrieved": [
+        "DB-001"
+      ],
+      "recall_at_3": 1.0,
+      "end_to_end_hit": true,
+      "citation_count": 1,
+      "citation_valid": true,
+      "log_references_valid": true,
+      "evidence_supported": true,
+      "latency_ms": 7.792
+    },
+    {
+      "id": "DB02",
+      "expected": "database",
+      "actual": "database",
+      "correct": true,
+      "status": "supported",
+      "retrieved": [
+        "DB-001"
+      ],
+      "recall_at_3": 1.0,
+      "end_to_end_hit": true,
+      "citation_count": 1,
+      "citation_valid": true,
+      "log_references_valid": true,
+      "evidence_supported": true,
+      "latency_ms": 4.768
+    },
+    {
+      "id": "DB03",
+      "expected": "database",
+      "actual": "database",
+      "correct": true,
+      "status": "supported",
+      "retrieved": [
+        "DB-001"
+      ],
+      "recall_at_3": 1.0,
+      "end_to_end_hit": true,
+      "citation_count": 1,
+      "citation_valid": true,
+      "log_references_valid": true,
+      "evidence_supported": true,
+      "latency_ms": 12.625
+    },
+    {
+      "id": "DB04",
+      "expected": "database",
+      "actual": "database",
+      "correct": true,
+      "status": "supported",
+      "retrieved": [
+        "DB-001"
+      ],
+      "recall_at_3": 1.0,
+      "end_to_end_hit": true,
+      "citation_count": 1,
+      "citation_valid": true,
+      "log_references_valid": true,
+      "evidence_supported": true,
+      "latency_ms": 6.853
+    },
+    {
+      "id": "DB05",
+      "expected": "database",
+      "actual": "database",
+      "correct": true,
+      "status": "supported",
+      "retrieved": [
+        "DB-001"
+      ],
+      "recall_at_3": 1.0,
+      "end_to_end_hit": true,
+      "citation_count": 1,
+      "citation_valid": true,
+      "log_references_valid": true,
+      "evidence_supported": true,
+      "latency_ms": 6.443
+    },
+    {
+      "id": "DB06",
+      "expected": "database",
+      "actual": "database",
+      "correct": true,
+      "status": "supported",
+      "retrieved": [
+        "DB-001"
+      ],
+      "recall_at_3": 1.0,
+      "end_to_end_hit": true,
+      "citation_count": 1,
+      "citation_valid": true,
+      "log_references_valid": true,
+      "evidence_supported": true,
+      "latency_ms": 7.344
+    },
+    {
+      "id": "DB07",
+      "expected": "database",
+      "actual": "database",
+      "correct": true,
+      "status": "supported",
+      "retrieved": [
+        "DB-001"
+      ],
+      "recall_at_3": 1.0,
+      "end_to_end_hit": true,
+      "citation_count": 1,
+      "citation_valid": true,
+      "log_references_valid": true,
+      "evidence_supported": true,
+      "latency_ms": 4.44
+    },
+    {
+      "id": "DB08",
+      "expected": "database",
+      "actual": "unknown",
+      "correct": false,
+      "status": "insufficient_evidence",
+      "retrieved": [],
+      "recall_at_3": 1.0,
+      "end_to_end_hit": false,
+      "citation_count": 0,
+      "citation_valid": true,
+      "log_references_valid": true,
+      "evidence_supported": null,
+      "latency_ms": 1.412
+    },
+    {
+      "id": "AU01",
+      "expected": "credentials",
+      "actual": "credentials",
+      "correct": true,
+      "status": "supported",
+      "retrieved": [
+        "AUTH-001",
+        "DB-001"
+      ],
+      "recall_at_3": 1.0,
+      "end_to_end_hit": true,
+      "citation_count": 1,
+      "citation_valid": true,
+      "log_references_valid": true,
+      "evidence_supported": true,
+      "latency_ms": 4.812
+    },
+    {
+      "id": "AU02",
+      "expected": "credentials",
+      "actual": "credentials",
+      "correct": true,
+      "status": "supported",
+      "retrieved": [
+        "AUTH-001",
+        "DB-001"
+      ],
+      "recall_at_3": 1.0,
+      "end_to_end_hit": true,
+      "citation_count": 1,
+      "citation_valid": true,
+      "log_references_valid": true,
+      "evidence_supported": true,
+      "latency_ms": 4.743
+    },
+    {
+      "id": "AU03",
+      "expected": "credentials",
+      "actual": "credentials",
+      "correct": true,
+      "status": "supported",
+      "retrieved": [
+        "AUTH-001",
+        "DB-001"
+      ],
+      "recall_at_3": 1.0,
+      "end_to_end_hit": true,
+      "citation_count": 1,
+      "citation_valid": true,
+      "log_references_valid": true,
+      "evidence_supported": true,
+      "latency_ms": 4.465
+    },
+    {
+      "id": "AU04",
+      "expected": "credentials",
+      "actual": "credentials",
+      "correct": true,
+      "status": "supported",
+      "retrieved": [
+        "AUTH-001",
+        "DB-001"
+      ],
+      "recall_at_3": 1.0,
+      "end_to_end_hit": true,
+      "citation_count": 1,
+      "citation_valid": true,
+      "log_references_valid": true,
+      "evidence_supported": true,
+      "latency_ms": 5.776
+    },
+    {
+      "id": "AU05",
+      "expected": "credentials",
+      "actual": "credentials",
+      "correct": true,
+      "status": "supported",
+      "retrieved": [
+        "AUTH-001",
+        "DB-001"
+      ],
+      "recall_at_3": 1.0,
+      "end_to_end_hit": true,
+      "citation_count": 1,
+      "citation_valid": true,
+      "log_references_valid": true,
+      "evidence_supported": true,
+      "latency_ms": 4.716
+    },
+    {
+      "id": "AU06",
+      "expected": "credentials",
+      "actual": "credentials",
+      "correct": true,
+      "status": "supported",
+      "retrieved": [
+        "AUTH-001",
+        "DB-001"
+      ],
+      "recall_at_3": 1.0,
+      "end_to_end_hit": true,
+      "citation_count": 1,
+      "citation_valid": true,
+      "log_references_valid": true,
+      "evidence_supported": true,
+      "latency_ms": 4.472
+    },
+    {
+      "id": "AU07",
+      "expected": "credentials",
+      "actual": "credentials",
+      "correct": true,
+      "status": "supported",
+      "retrieved": [
+        "AUTH-001",
+        "DB-001"
+      ],
+      "recall_at_3": 1.0,
+      "end_to_end_hit": true,
+      "citation_count": 1,
+      "citation_valid": true,
+      "log_references_valid": true,
+      "evidence_supported": true,
+      "latency_ms": 4.711
+    },
+    {
+      "id": "AU08",
+      "expected": "credentials",
+      "actual": "unknown",
+      "correct": false,
+      "status": "insufficient_evidence",
+      "retrieved": [],
+      "recall_at_3": 1.0,
+      "end_to_end_hit": false,
+      "citation_count": 0,
+      "citation_valid": true,
+      "log_references_valid": true,
+      "evidence_supported": null,
+      "latency_ms": 1.588
+    },
+    {
+      "id": "SV01",
+      "expected": "service",
+      "actual": "service",
+      "correct": true,
+      "status": "supported",
+      "retrieved": [
+        "SVC-001",
+        "DB-001"
+      ],
+      "recall_at_3": 1.0,
+      "end_to_end_hit": true,
+      "citation_count": 1,
+      "citation_valid": true,
+      "log_references_valid": true,
+      "evidence_supported": true,
+      "latency_ms": 6.483
+    },
+    {
+      "id": "SV02",
+      "expected": "service",
+      "actual": "service",
+      "correct": true,
+      "status": "supported",
+      "retrieved": [
+        "SVC-001",
+        "DB-001"
+      ],
+      "recall_at_3": 1.0,
+      "end_to_end_hit": true,
+      "citation_count": 1,
+      "citation_valid": true,
+      "log_references_valid": true,
+      "evidence_supported": true,
+      "latency_ms": 7.234
+    },
+    {
+      "id": "SV03",
+      "expected": "service",
+      "actual": "service",
+      "correct": true,
+      "status": "supported",
+      "retrieved": [
+        "SVC-001",
+        "DB-001"
+      ],
+      "recall_at_3": 1.0,
+      "end_to_end_hit": true,
+      "citation_count": 1,
+      "citation_valid": true,
+      "log_references_valid": true,
+      "evidence_supported": true,
+      "latency_ms": 5.277
+    },
+    {
+      "id": "SV04",
+      "expected": "service",
+      "actual": "service",
+      "correct": true,
+      "status": "supported",
+      "retrieved": [
+        "SVC-001",
+        "DB-001"
+      ],
+      "recall_at_3": 1.0,
+      "end_to_end_hit": true,
+      "citation_count": 1,
+      "citation_valid": true,
+      "log_references_valid": true,
+      "evidence_supported": true,
+      "latency_ms": 6.594
+    },
+    {
+      "id": "SV05",
+      "expected": "service",
+      "actual": "service",
+      "correct": true,
+      "status": "supported",
+      "retrieved": [
+        "SVC-001",
+        "DB-001"
+      ],
+      "recall_at_3": 1.0,
+      "end_to_end_hit": true,
+      "citation_count": 1,
+      "citation_valid": true,
+      "log_references_valid": true,
+      "evidence_supported": true,
+      "latency_ms": 5.835
+    },
+    {
+      "id": "SV06",
+      "expected": "service",
+      "actual": "service",
+      "correct": true,
+      "status": "supported",
+      "retrieved": [
+        "SVC-001",
+        "DB-001"
+      ],
+      "recall_at_3": 1.0,
+      "end_to_end_hit": true,
+      "citation_count": 1,
+      "citation_valid": true,
+      "log_references_valid": true,
+      "evidence_supported": true,
+      "latency_ms": 9.003
+    },
+    {
+      "id": "SV07",
+      "expected": "service",
+      "actual": "service",
+      "correct": true,
+      "status": "supported",
+      "retrieved": [
+        "SVC-001",
+        "DB-001"
+      ],
+      "recall_at_3": 1.0,
+      "end_to_end_hit": true,
+      "citation_count": 1,
+      "citation_valid": true,
+      "log_references_valid": true,
+      "evidence_supported": true,
+      "latency_ms": 5.328
+    },
+    {
+      "id": "SV08",
+      "expected": "service",
+      "actual": "unknown",
+      "correct": false,
+      "status": "insufficient_evidence",
+      "retrieved": [],
+      "recall_at_3": 1.0,
+      "end_to_end_hit": false,
+      "citation_count": 0,
+      "citation_valid": true,
+      "log_references_valid": true,
+      "evidence_supported": null,
+      "latency_ms": 2.16
+    },
+    {
+      "id": "UN01",
+      "expected": "unknown",
+      "actual": "unknown",
+      "correct": true,
+      "status": "insufficient_evidence",
+      "retrieved": [],
+      "recall_at_3": null,
+      "end_to_end_hit": null,
+      "citation_count": 0,
+      "citation_valid": true,
+      "log_references_valid": true,
+      "evidence_supported": null,
+      "latency_ms": 0.06
+    },
+    {
+      "id": "UN02",
+      "expected": "unknown",
+      "actual": "unknown",
+      "correct": true,
+      "status": "insufficient_evidence",
+      "retrieved": [],
+      "recall_at_3": null,
+      "end_to_end_hit": null,
+      "citation_count": 0,
+      "citation_valid": true,
+      "log_references_valid": true,
+      "evidence_supported": null,
+      "latency_ms": 0.092
+    },
+    {
+      "id": "UN03",
+      "expected": "unknown",
+      "actual": "unknown",
+      "correct": true,
+      "status": "insufficient_evidence",
+      "retrieved": [],
+      "recall_at_3": null,
+      "end_to_end_hit": null,
+      "citation_count": 0,
+      "citation_valid": true,
+      "log_references_valid": true,
+      "evidence_supported": null,
+      "latency_ms": 0.213
+    },
+    {
+      "id": "UN04",
+      "expected": "unknown",
+      "actual": "unknown",
+      "correct": true,
+      "status": "insufficient_evidence",
+      "retrieved": [],
+      "recall_at_3": null,
+      "end_to_end_hit": null,
+      "citation_count": 0,
+      "citation_valid": true,
+      "log_references_valid": true,
+      "evidence_supported": null,
+      "latency_ms": 0.058
+    },
+    {
+      "id": "UN05",
+      "expected": "unknown",
+      "actual": "unknown",
+      "correct": true,
+      "status": "insufficient_evidence",
+      "retrieved": [],
+      "recall_at_3": null,
+      "end_to_end_hit": null,
+      "citation_count": 0,
+      "citation_valid": true,
+      "log_references_valid": true,
+      "evidence_supported": null,
+      "latency_ms": 0.065
+    },
+    {
+      "id": "UN06",
+      "expected": "unknown",
+      "actual": "unknown",
+      "correct": true,
+      "status": "insufficient_evidence",
+      "retrieved": [],
+      "recall_at_3": null,
+      "end_to_end_hit": null,
+      "citation_count": 0,
+      "citation_valid": true,
+      "log_references_valid": true,
+      "evidence_supported": null,
+      "latency_ms": 0.085
+    },
+    {
+      "id": "UN07",
+      "expected": "unknown",
+      "actual": "unknown",
+      "correct": true,
+      "status": "insufficient_evidence",
+      "retrieved": [],
+      "recall_at_3": null,
+      "end_to_end_hit": null,
+      "citation_count": 0,
+      "citation_valid": true,
+      "log_references_valid": true,
+      "evidence_supported": null,
+      "latency_ms": 0.072
+    },
+    {
+      "id": "UN08",
+      "expected": "unknown",
+      "actual": "unknown",
+      "correct": true,
+      "status": "insufficient_evidence",
+      "retrieved": [],
+      "recall_at_3": null,
+      "end_to_end_hit": null,
+      "citation_count": 0,
+      "citation_valid": true,
+      "log_references_valid": true,
+      "evidence_supported": null,
+      "latency_ms": 0.087
+    },
+    {
+      "id": "UN09",
+      "expected": "unknown",
+      "actual": "unknown",
+      "correct": true,
+      "status": "insufficient_evidence",
+      "retrieved": [],
+      "recall_at_3": null,
+      "end_to_end_hit": null,
+      "citation_count": 0,
+      "citation_valid": true,
+      "log_references_valid": true,
+      "evidence_supported": null,
+      "latency_ms": 0.249
+    },
+    {
+      "id": "UN10",
+      "expected": "unknown",
+      "actual": "database",
+      "correct": false,
+      "status": "supported",
+      "retrieved": [
+        "DB-001"
+      ],
+      "recall_at_3": null,
+      "end_to_end_hit": null,
+      "citation_count": 1,
+      "citation_valid": true,
+      "log_references_valid": true,
+      "evidence_supported": false,
+      "latency_ms": 3.094
+    },
+    {
+      "id": "UN11",
+      "expected": "unknown",
+      "actual": "unknown",
+      "correct": true,
+      "status": "insufficient_evidence",
+      "retrieved": [],
+      "recall_at_3": null,
+      "end_to_end_hit": null,
+      "citation_count": 0,
+      "citation_valid": true,
+      "log_references_valid": true,
+      "evidence_supported": null,
+      "latency_ms": 0.079
+    },
+    {
+      "id": "UN12",
+      "expected": "unknown",
+      "actual": "unknown",
+      "correct": true,
+      "status": "insufficient_evidence",
+      "retrieved": [],
+      "recall_at_3": null,
+      "end_to_end_hit": null,
+      "citation_count": 0,
+      "citation_valid": true,
+      "log_references_valid": true,
+      "evidence_supported": null,
+      "latency_ms": 0.068
+    },
+    {
+      "id": "IN01",
+      "expected": "invalid",
+      "actual": "invalid",
+      "correct": true
+    },
+    {
+      "id": "IN02",
+      "expected": "invalid",
+      "actual": "invalid",
+      "correct": true
+    },
+    {
+      "id": "IN03",
+      "expected": "invalid",
+      "actual": "invalid",
+      "correct": true
+    },
+    {
+      "id": "IN04",
+      "expected": "invalid",
+      "actual": "invalid",
+      "correct": true
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "method": "Author-reviewed template rubric, not independent validation. A suggested explanation must be tentative and narrower than its category's cited runbook; every diagnostic check must appear in that section. Observation support is separately checked against the labeled case. Reusing a template does not prove the incident's root cause.",
+  "template_reviews": {
+    "database": {"source":"DB-001", "explanation_supported":true, "checks_supported":true, "rationale":"Connectivity/capacity alternatives and both checks are explicitly described; no cause is asserted as confirmed."},
+    "credentials": {"source":"AUTH-001", "explanation_supported":true, "checks_supported":true, "rationale":"Validity/rotation alternatives and metadata/rotation checks appear in the section."},
+    "service": {"source":"SVC-001", "explanation_supported":true, "checks_supported":true, "rationale":"Health/routing/deployment alternatives and both checks appear in the section."}
+  },
+  "case_overrides": {"UN10":{"evidence_supported":false,"rationale":"The line is explicitly a training example, but the lexical classifier treats it as a live failure."}}
+}

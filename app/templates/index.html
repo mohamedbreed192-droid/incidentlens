@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="IncidentLens — a synthetic incident investigation portfolio prototype."
+    />
+    <title>IncidentLens · Investigation workspace</title>
+    <link rel="icon" href="/static/lens.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/static/app.css" />
+    <script defer src="/static/app.js"></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <div id="notice" class="notice" role="status" aria-live="polite"></div>
+    <div id="app"></div>
+    <dialog id="source-dialog" aria-labelledby="source-title">
+      <div class="dialog-header">
+        <h2 id="source-title">Source document</h2>
+        <button
+          class="icon-button"
+          data-close="source-dialog"
+          aria-label="Close source"
+        >
+          ×
+        </button>
+      </div>
+      <div id="source-body"></div>
+    </dialog>
+    <dialog id="editor-dialog" aria-labelledby="editor-title">
+      <div class="dialog-header">
+        <h2 id="editor-title">Manage runbook section</h2>
+        <button
+          class="icon-button"
+          data-close="editor-dialog"
+          aria-label="Close editor"
+        >
+          ×
+        </button>
+      </div>
+      <form id="document-form">
+        <input type="hidden" name="id" />
+        <label
+          >Runbook key<input
+            name="key"
+            required
+            pattern="[A-Z0-9-]{3,40}"
+            maxlength="40"
+            placeholder="DB-002"
+        /></label>
+        <label
+          >Title<input name="title" required minlength="3" maxlength="160"
+        /></label>
+        <label
+          >Section<input name="section" required minlength="3" maxlength="120"
+        /></label>
+        <label
+          >Access<select name="access">
+            <option value="shared">Shared with engineers</option>
+            <option value="restricted">
+              Restricted engineers and administrators
+            </option>
+          </select></label
+        >
+        <label
+          >Guidance (plain text or Markdown)<textarea
+            name="content"
+            required
+            minlength="20"
+            maxlength="12000"
+            rows="9"
+          ></textarea>
+        </label>
+        <label class="checkbox"
+          ><input type="checkbox" name="active" checked /> Available for
+          retrieval</label
+        >
+        <p class="muted">
+          Saving increments the version. Reports using an older version become
+          unavailable until a new investigation is submitted.
+        </p>
+        <p class="form-error" id="editor-error" role="alert"></p>
+        <button class="button" type="submit">Save runbook</button>
+      </form>
+    </dialog>
+  </body>
+</html>

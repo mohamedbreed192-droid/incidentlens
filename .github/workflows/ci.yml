@@ -1,0 +1,61 @@
+name: CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: incidentlens
+          POSTGRES_PASSWORD: ci-only-not-a-deployment-secret
+          POSTGRES_DB: incidentlens_test
+        ports: ["5432:5432"]
+        options: >-
+          --health-cmd "pg_isready -U incidentlens -d incidentlens_test"
+          --health-interval 3s --health-timeout 3s --health-retries 20
+    env:
+      DATABASE_URL: postgresql+psycopg://incidentlens:ci-only-not-a-deployment-secret@localhost:5432/incidentlens_test
+      TEST_DATABASE_URL: postgresql+psycopg://incidentlens:ci-only-not-a-deployment-secret@localhost:5432/incidentlens_test
+      SESSION_SECRET: ci-only-synthetic-secret-with-more-than-32-characters
+      SESSION_SECURE: "false"
+      APP_ENV: development
+      ALLOWED_ORIGIN: http://localhost:8000
+      ANALYSIS_MODE: baseline
+      DEMO_PASSWORD: Synthetic-tests-only-42!
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-dev.lock
+      - run: pip install -r requirements-dev.lock
+      - run: ruff check app tests scripts alembic
+      - run: ruff format --check app tests scripts alembic
+      - run: node --check app/static/app.js
+      - name: PostgreSQL integration and unit tests
+        run: python -m pytest --cov=app --cov-report=term-missing --junitxml=test-results/unit.xml
+      - name: Evaluate frozen synthetic cases
+        run: python -m scripts.evaluate
+      - name: Install test browser
+        run: python -m playwright install --with-deps chromium
+      - name: Run the real browser workflow
+        run: |
+          uvicorn app.main:app --host 127.0.0.1 --port 8000 --no-access-log > /tmp/incidentlens-app.log 2>&1 &
+          for i in $(seq 1 30); do curl -fsS http://localhost:8000/health/ready && break || sleep 1; done
+          python -m scripts.browser_check
+      - name: Save verification artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: verification-evidence
+          path: |
+            test-results/
+            evaluation/results.json

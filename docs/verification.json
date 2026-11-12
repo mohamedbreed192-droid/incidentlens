@@ -1,0 +1,94 @@
+{
+  "backend": {
+    "tests": 49,
+    "failures": 0,
+    "errors": 0,
+    "coverage_statement_percent": 94
+  },
+  "browser": {
+    "checked_at": "2026-11-12T19:21:06.196924+00:00",
+    "results": [
+      {
+        "viewport": "desktop",
+        "width": 1440,
+        "height": 1000,
+        "checks": [
+          "login",
+          "paste submission",
+          "investigation and line number",
+          "source inspection",
+          "keyboard dialog dismissal",
+          "review and audit",
+          "persisted history",
+          "authorized library",
+          "permission denied",
+          "file upload",
+          "insufficient evidence",
+          "no horizontal overflow",
+          "logout"
+        ],
+        "passed": true,
+        "javascript_errors": []
+      },
+      {
+        "viewport": "mobile",
+        "width": 390,
+        "height": 844,
+        "checks": [
+          "login",
+          "paste submission",
+          "investigation and line number",
+          "source inspection",
+          "keyboard dialog dismissal",
+          "review and audit",
+          "persisted history",
+          "authorized library",
+          "permission denied",
+          "file upload",
+          "insufficient evidence",
+          "no horizontal overflow",
+          "logout"
+        ],
+        "passed": true,
+        "javascript_errors": []
+      },
+      {
+        "viewport": "administrator desktop",
+        "width": 1440,
+        "height": 1000,
+        "checks": [
+          "administrator login",
+          "create document",
+          "edit/archive document",
+          "version increment",
+          "administrative audit",
+          "logout"
+        ],
+        "passed": true,
+        "javascript_errors": []
+      }
+    ]
+  },
+  "fresh_start": {
+    "fresh_postgresql_volume": true,
+    "migration_before_startup": true,
+    "ready": true,
+    "no_accounts_before_explicit_seed": true,
+    "interactive_seed_cli": true,
+    "zero_incidents_after_seed": true,
+    "authorized_library_count": 5,
+    "login_logout": true,
+    "app_port": 18080
+  },
+  "static_checks": {
+    "ruff_lint": "passed",
+    "ruff_format": "passed",
+    "javascript_syntax": "passed"
+  },
+  "external_provider": {
+    "live_calls_performed": false,
+    "adapter_http_mocks": "passed",
+    "pipeline_mocks": "passed"
+  },
+  "note": "Local performed checks. Remote commit-specific evidence is in GitHub Actions; this file is not a claim of production readiness."
+}

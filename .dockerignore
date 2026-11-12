@@ -1,0 +1,9 @@
+# Only runtime code, migrations, and the dependency lock enter the image context.
+*
+!requirements.lock
+!alembic.ini
+!app/
+!app/**
+!alembic/
+!alembic/**
+**/__pycache__/
