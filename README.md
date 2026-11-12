@@ -146,10 +146,13 @@ The frozen [evaluation cases](evaluation/cases.json) contain **40 synthetic case
 | Unknown/ambiguous cases producing insufficient evidence | **11/12** |
 | Known-category cases incorrectly abstaining | **3/24** |
 | Malformed input rejection | **4/4** |
-| Local serial evaluation timing | **4.591 ms median; 9.003 ms p95; 12.625 ms maximum** |
+| Local serial analysis/evaluation timing | **4.591 ms median; 9.003 ms p95; 12.625 ms maximum** |
+| Authenticated incident-creation HTTP latency, 36/36 successful requests | **8.939 ms median; 12.500 ms p95; 50.636 ms maximum** |
 | Backend tests | **49 passed**, **94% statement coverage** in the recorded local run |
 
 Timings use Python 3.12.14, PostgreSQL 16.15, and Linux x86-64 in the managed development environment with a warm connection. They include parsing, analysis, and extra retrieval measurement queries; they exclude HTTP, authentication, browser rendering, external models, and load/concurrency testing. They are not production latency claims.
+
+A separate [HTTP benchmark](evaluation/http-results.json) measured 36 authenticated, serial `POST /api/incidents` requests over loopback to the running Docker application. It includes request validation, analysis, incident/audit persistence, commit, and response transport, with a warm app/database and no concurrent load. Login, verification reads, browser rendering, cold starts, and models are excluded. The maximum is retained rather than hidden. Reproduce it with `python -m scripts.benchmark_http`; it prompts for the local demo password and creates synthetic records.
 
 **Failures are retained:** `DB08`, `AU08`, and `SV08` use unsupported wording and abstain. `UN10` explicitly quotes a training example but is incorrectly classified as a real database failure. The classifier does not understand negation or event context. A valid citation does **not** establish that an incident-specific explanation is true.
 

@@ -31,7 +31,14 @@ Full per-case results and exact runtime metadata are in [results.json](../evalua
 | Unknown/ambiguous abstention | 11/12 |
 | Incorrect known-category abstention | 3/24 |
 | Malformed inputs rejected | 4/4 |
-| Serial measurement median / p95 / maximum | 4.591 / 9.003 / 12.625 ms |
+| Analysis/evaluation median / p95 / maximum | 4.591 / 9.003 / 12.625 ms |
+| Incident-creation HTTP median / p95 / maximum | 8.939 / 12.500 / 50.636 ms (36/36 HTTP 201) |
+
+### Actual HTTP request timing
+
+`benchmark_http.py` submits the 36 valid frozen cases to `POST /api/incidents` on the running single-worker Docker demo. It authenticates once and measures each complete POST response with `perf_counter` using HTTP/1.1 keep-alive, serial requests, a warm application/database, and no concurrent load. It includes body parsing, redaction, authorization, retrieval, report generation, incident/audit persistence and commit, and response transport. Login, subsequent report-verification reads, browser rendering, external models and cold startup are excluded. The maximum 50.636 ms observation is retained; no cause for that outlier was established.
+
+[http-results.json](../evaluation/http-results.json) contains every sample and the exact conditions. This is a small loopback experiment, not a load or production-latency benchmark. Run `python -m scripts.benchmark_http` against the local baseline demo to repeat it; the script deliberately creates synthetic incident records.
 
 ### Failures retained in the dataset
 

@@ -15,6 +15,7 @@ Local verification was performed on November 12, 2026. This file records perform
 | Administrator browser | Create section, edit/archive, version increment, inspect administrative audit, and logout passed |
 | JavaScript browser errors | None recorded in the checked workflows |
 | Evaluation | 40 cases; all individual predictions and four retained classification failures published |
+| Actual HTTP requests | 36/36 incident creations returned 201; 8.939 ms median, 12.500 ms p95, 50.636 ms maximum; full conditions/samples published |
 | External provider | Real adapter exercised through HTTP mocks and pipeline mocks; no live paid calls performed |
 
 The local pytest run reports two non-failing upstream notices: a Starlette/AnyIO deprecation and Alembic's inability to alter a computed column default. The schema comparison still finds no upgrade operations. Neither warning was hidden to obtain a passing result.
@@ -28,6 +29,8 @@ GitHub Actions repeats PostgreSQL tests, evaluation, and the desktop/mobile/admi
 The first GitHub Actions run passed all 49 tests and the evaluation, then failed before browser checks because `ubuntu-latest` selected Ubuntu 26.04, which the pinned Playwright version does not support. The workflow now pins supported Ubuntu 24.04. No application assertions were weakened or skipped to address that runner compatibility failure.
 
 The following run installed the browser successfully and then exposed that the general `*.log` ignore rule had omitted the synthetic development fixtures from the initial publication. The rule now explicitly permits `fixtures/development/*.log`, and all four sample files are included. The browser workflow remains intact and exercises those published files.
+
+The corrected workflow [passed on commit `85a6963`](https://github.com/mohamedbreed192-droid/incidentlens/actions/runs/43290746649), including all browser checks. A clean committed checkout also passed the local desktop, mobile, and administrator workflow. The project and main profile pages returned HTTP 200 with rendered README content; the new IncidentLens profile link was observed in the actual profile README. All 13 published screenshot PNGs and the four existing profile header SVGs were retrieved successfully.
 
 ## Not verified
 

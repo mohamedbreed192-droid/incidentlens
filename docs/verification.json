@@ -90,5 +90,36 @@
     "adapter_http_mocks": "passed",
     "pipeline_mocks": "passed"
   },
-  "note": "Local performed checks. Remote commit-specific evidence is in GitHub Actions; this file is not a claim of production readiness."
+  "note": "Local performed checks. Remote commit-specific evidence is in GitHub Actions; this file is not a claim of production readiness.",
+  "http_benchmark": {
+    "requests": 36,
+    "successful_creations": 36,
+    "latency_ms": {
+      "median": 8.939,
+      "p95_nearest_rank": 12.5,
+      "max": 50.636
+    },
+    "source": "evaluation/http-results.json"
+  },
+  "remote_ci": {
+    "verified_commit": "85a69639ad26fac30ed594afb910c6ac1e09d283",
+    "run_url": "https://github.com/mohamedbreed192-droid/incidentlens/actions/runs/43290746649",
+    "conclusion": "success"
+  },
+  "public_pages": {
+    "project": {
+      "http_status": 200,
+      "markdown_article_found": true,
+      "incidentlens_link_in_readme": false,
+      "readme_images": 8
+    },
+    "profile": {
+      "http_status": 200,
+      "markdown_article_found": true,
+      "incidentlens_link_in_readme": true,
+      "readme_images": 1
+    },
+    "published_screenshot_files_verified": 13,
+    "existing_profile_header_images_verified": 4
+  }
 }

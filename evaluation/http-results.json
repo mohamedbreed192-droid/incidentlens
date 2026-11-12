@@ -1,0 +1,201 @@
+{
+  "measured_at": "2026-11-12T19:33:00.151587+00:00",
+  "conditions": {
+    "client_python": "3.12.14",
+    "platform": "Linux-6.18.57-x86_64-with-glibc2.41",
+    "url": "http://localhost:8000",
+    "analysis_mode": "baseline",
+    "requests": "36 valid frozen cases; authenticated once, serial HTTP/1.1 keep-alive; warm app/database; no concurrent load; loopback to Docker FastAPI/PostgreSQL",
+    "included": "POST /api/incidents transport, parsing, redaction, authorization, retrieval, report generation, incident/audit persistence, commit, and response body",
+    "excluded": "login, subsequent detail verification GET, browser rendering, external model, cold startup"
+  },
+  "requests": 36,
+  "successful_creations": 36,
+  "latency_ms": {
+    "median": 8.939,
+    "p95_nearest_rank": 12.5,
+    "max": 50.636
+  },
+  "results": [
+    {
+      "case": "DB01",
+      "status_code": 201,
+      "latency_ms": 10.91
+    },
+    {
+      "case": "DB02",
+      "status_code": 201,
+      "latency_ms": 10.471
+    },
+    {
+      "case": "DB03",
+      "status_code": 201,
+      "latency_ms": 10.132
+    },
+    {
+      "case": "DB04",
+      "status_code": 201,
+      "latency_ms": 8.273
+    },
+    {
+      "case": "DB05",
+      "status_code": 201,
+      "latency_ms": 50.636
+    },
+    {
+      "case": "DB06",
+      "status_code": 201,
+      "latency_ms": 7.999
+    },
+    {
+      "case": "DB07",
+      "status_code": 201,
+      "latency_ms": 8.318
+    },
+    {
+      "case": "DB08",
+      "status_code": 201,
+      "latency_ms": 7.192
+    },
+    {
+      "case": "AU01",
+      "status_code": 201,
+      "latency_ms": 11.546
+    },
+    {
+      "case": "AU02",
+      "status_code": 201,
+      "latency_ms": 9.58
+    },
+    {
+      "case": "AU03",
+      "status_code": 201,
+      "latency_ms": 8.616
+    },
+    {
+      "case": "AU04",
+      "status_code": 201,
+      "latency_ms": 10.558
+    },
+    {
+      "case": "AU05",
+      "status_code": 201,
+      "latency_ms": 9.702
+    },
+    {
+      "case": "AU06",
+      "status_code": 201,
+      "latency_ms": 10.313
+    },
+    {
+      "case": "AU07",
+      "status_code": 201,
+      "latency_ms": 9.088
+    },
+    {
+      "case": "AU08",
+      "status_code": 201,
+      "latency_ms": 9.726
+    },
+    {
+      "case": "SV01",
+      "status_code": 201,
+      "latency_ms": 8.615
+    },
+    {
+      "case": "SV02",
+      "status_code": 201,
+      "latency_ms": 8.649
+    },
+    {
+      "case": "SV03",
+      "status_code": 201,
+      "latency_ms": 12.5
+    },
+    {
+      "case": "SV04",
+      "status_code": 201,
+      "latency_ms": 9.246
+    },
+    {
+      "case": "SV05",
+      "status_code": 201,
+      "latency_ms": 8.68
+    },
+    {
+      "case": "SV06",
+      "status_code": 201,
+      "latency_ms": 11.987
+    },
+    {
+      "case": "SV07",
+      "status_code": 201,
+      "latency_ms": 8.98
+    },
+    {
+      "case": "SV08",
+      "status_code": 201,
+      "latency_ms": 9.467
+    },
+    {
+      "case": "UN01",
+      "status_code": 201,
+      "latency_ms": 10.205
+    },
+    {
+      "case": "UN02",
+      "status_code": 201,
+      "latency_ms": 6.889
+    },
+    {
+      "case": "UN03",
+      "status_code": 201,
+      "latency_ms": 7.313
+    },
+    {
+      "case": "UN04",
+      "status_code": 201,
+      "latency_ms": 6.982
+    },
+    {
+      "case": "UN05",
+      "status_code": 201,
+      "latency_ms": 8.142
+    },
+    {
+      "case": "UN06",
+      "status_code": 201,
+      "latency_ms": 7.471
+    },
+    {
+      "case": "UN07",
+      "status_code": 201,
+      "latency_ms": 7.184
+    },
+    {
+      "case": "UN08",
+      "status_code": 201,
+      "latency_ms": 6.959
+    },
+    {
+      "case": "UN09",
+      "status_code": 201,
+      "latency_ms": 8.447
+    },
+    {
+      "case": "UN10",
+      "status_code": 201,
+      "latency_ms": 8.897
+    },
+    {
+      "case": "UN11",
+      "status_code": 201,
+      "latency_ms": 7.385
+    },
+    {
+      "case": "UN12",
+      "status_code": 201,
+      "latency_ms": 9.525
+    }
+  ]
+}
