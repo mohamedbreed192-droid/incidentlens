@@ -25,6 +25,8 @@ The first browser run was followed by a clean screenshot capture with no transie
 
 GitHub Actions repeats PostgreSQL tests, evaluation, and the desktop/mobile/administrator browser workflows and uploads its raw evidence. Inspect [the actual workflow runs](https://github.com/mohamedbreed192-droid/incidentlens/actions/workflows/ci.yml) for commit-specific remote status; the badge and run logs are authoritative.
 
+The first GitHub Actions run passed all 49 tests and the evaluation, then failed before browser checks because `ubuntu-latest` selected Ubuntu 26.04, which the pinned Playwright version does not support. The workflow now pins supported Ubuntu 24.04. No application assertions were weakened or skipped to address that runner compatibility failure.
+
 ## Not verified
 
 Live OpenAI/Granite/watsonx behavior, paid model quality or cost, semantic search benefits, public backend hosting, production security, independent accessibility certification, load/concurrency capacity, disaster recovery, regulatory compliance, and real-customer impact were not tested or claimed.
