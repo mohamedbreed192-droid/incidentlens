@@ -7,6 +7,7 @@ __pycache__/
 htmlcov/
 *.egg-info/
 *.log
+!fixtures/development/*.log
 *.db
 test-results/
 work/

@@ -27,6 +27,8 @@ GitHub Actions repeats PostgreSQL tests, evaluation, and the desktop/mobile/admi
 
 The first GitHub Actions run passed all 49 tests and the evaluation, then failed before browser checks because `ubuntu-latest` selected Ubuntu 26.04, which the pinned Playwright version does not support. The workflow now pins supported Ubuntu 24.04. No application assertions were weakened or skipped to address that runner compatibility failure.
 
+The following run installed the browser successfully and then exposed that the general `*.log` ignore rule had omitted the synthetic development fixtures from the initial publication. The rule now explicitly permits `fixtures/development/*.log`, and all four sample files are included. The browser workflow remains intact and exercises those published files.
+
 ## Not verified
 
 Live OpenAI/Granite/watsonx behavior, paid model quality or cost, semantic search benefits, public backend hosting, production security, independent accessibility certification, load/concurrency capacity, disaster recovery, regulatory compliance, and real-customer impact were not tested or claimed.

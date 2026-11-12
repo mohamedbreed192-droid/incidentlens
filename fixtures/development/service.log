@@ -1,0 +1,3 @@
+2026-06-04T10:21:01Z INFO order submitted request_id=synthetic-002
+2026-06-04T10:21:02Z ERROR gateway HTTP 503 Service Unavailable upstream=inventory
+2026-06-04T10:21:03Z WARN order request delayed

@@ -1,0 +1,3 @@
+2026-06-04T10:04:11Z INFO checkout request started request_id=synthetic-001
+2026-06-04T10:04:12Z ERROR checkout postgres connection refused at db.internal.example:5432
+2026-06-04T10:04:12Z WARN checkout request failed status=500
